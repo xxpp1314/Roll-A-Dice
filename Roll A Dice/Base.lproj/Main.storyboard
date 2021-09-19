@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Roll_A_Dice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-cf-WFT">
+                                <rect key="frame" x="14" y="40" width="72" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Below 7"/>
+                                <connections>
+                                    <action selector="below7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6KL-BS-4mj"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Dice3" translatesAutoresizingMaskIntoConstraints="NO" id="iNq-6C-kDS">
+                                <rect key="frame" x="0.0" y="120" width="273" height="126"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Dice5" translatesAutoresizingMaskIntoConstraints="NO" id="3f6-91-ftI">
+                                <rect key="frame" x="155" y="120" width="273" height="126"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score = 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNd-Ri-4tY">
+                                <rect key="frame" x="35" y="324" width="358" height="25.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-Ee-qsO">
+                                <rect key="frame" x="238" y="40" width="75" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Above 7"/>
+                                <connections>
+                                    <action selector="above7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcn-4p-6Xo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-3U-lLQ">
+                                <rect key="frame" x="126" y="40" width="72" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Lucky 7"/>
+                                <connections>
+                                    <action selector="lucky7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jch-a1-0lB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qNd-Ri-4tY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="05f-fU-Nd9"/>
+                            <constraint firstItem="R4T-3U-lLQ" firstAttribute="leading" secondItem="8m1-cf-WFT" secondAttribute="trailing" constant="40" id="0rc-J8-Ecz"/>
+                            <constraint firstItem="3f6-91-ftI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1U3-9s-Ral"/>
+                            <constraint firstItem="rOR-Ee-qsO" firstAttribute="leading" secondItem="R4T-3U-lLQ" secondAttribute="trailing" constant="40" id="CHb-Xu-H0X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iNq-6C-kDS" secondAttribute="trailing" constant="155" id="IZb-yn-3eu"/>
+                            <constraint firstItem="8m1-cf-WFT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="NOW-ut-qc2"/>
+                            <constraint firstItem="iNq-6C-kDS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rmo-rN-YT1"/>
+                            <constraint firstItem="rOR-Ee-qsO" firstAttribute="leading" secondItem="R4T-3U-lLQ" secondAttribute="trailing" constant="40" id="URW-gi-uEB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qNd-Ri-4tY" secondAttribute="trailing" constant="35" id="WKa-tl-l8z"/>
+                            <constraint firstItem="R4T-3U-lLQ" firstAttribute="leading" secondItem="8m1-cf-WFT" secondAttribute="trailing" constant="40" id="gps-2L-nmg"/>
+                            <constraint firstItem="qNd-Ri-4tY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="280" id="jiT-hu-4i2"/>
+                            <constraint firstItem="3f6-91-ftI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="155" id="qVf-3o-U8A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-Ee-qsO" secondAttribute="trailing" constant="14" id="tHI-pE-GQS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgOne" destination="iNq-6C-kDS" id="DSR-OG-j1v"/>
+                        <outlet property="imgTwo" destination="3f6-91-ftI" id="7w0-RX-i6T"/>
+                        <outlet property="lbsScore" destination="qNd-Ri-4tY" id="2im-cs-HR3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dice3" width="18.666666030883789" height="18.666666030883789"/>
+        <image name="Dice5" width="18.666666030883789" height="18.666666030883789"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
